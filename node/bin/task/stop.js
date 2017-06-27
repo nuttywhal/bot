@@ -14,6 +14,7 @@ function stop() {
     processManager.connect(() => {
         processManager.delete('lubbers', () => {
             processManager.disconnect();
+            process.exit(0);
         });
     });
 }

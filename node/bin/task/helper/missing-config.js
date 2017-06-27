@@ -14,3 +14,4 @@ cliui.div({
 });
 
 console.log(cliui.toString());
+process.exit(1);

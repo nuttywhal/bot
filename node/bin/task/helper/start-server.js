@@ -5,5 +5,5 @@ const configuration = require('../../../config.json');
 
 lubbers.setup(configuration);
 lubbers.server.start(() => {
-    console.log(`Server running at: ${server.info.uri}`);
+    console.log(`Server running at: ${lubbers.server.info.uri}`);
 });

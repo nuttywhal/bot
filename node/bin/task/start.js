@@ -14,16 +14,17 @@ const path = require('path');
  * @returns {Null}
  */
 function start() {
-    fs.stat('../../config.json', (error) => {
+    fs.stat('config.json', (error) => {
         if (!error) {
             processManager.connect(() => {
                 processManager.start(
                     {
                         name: 'lubbers',
-                        script: path.resolve(__dirname, 'helpers', 'start-server.js')
+                        script: path.resolve(__dirname, 'helper', 'start-server.js')
                     },
                     () => {
                         processManager.disconnect();
+                        process.exit(0);
                     }
                 );
             });

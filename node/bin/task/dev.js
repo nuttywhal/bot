@@ -11,7 +11,7 @@ const fs = require('fs');
  * @returns {Null}
  */
 function dev() {
-    fs.stat('../../config.json', (error) => {
+    fs.stat('config.json', (error) => {
         if (!error) {
             require('./helper/start-server');
         } else {
