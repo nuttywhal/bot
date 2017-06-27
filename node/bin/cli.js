@@ -42,4 +42,5 @@ if (selectedTask) {
     }
 
     console.log(cliui.toString());
+    process.exit(0);
 }
