@@ -8,6 +8,12 @@ parserOptions:
 rules:
   array-element-newline:
     - off
+  camelcase:
+    - off
+  capitalized-comments:
+    - error
+    - always
+    - ignoreConsecutiveComments: true
   complexity:
     - warn
     - 10
