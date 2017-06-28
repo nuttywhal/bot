@@ -1,21 +1,22 @@
-'use strict';
-
 /**
  * @module bin/task/dev
  */
 
 const fs = require('fs');
+const missingConfig = require('./helper/missing-config');
+const startServer = require('./helper/start-server');
 
 /**
  * Start the server in developer mode.
- * @returns {Null}
+ *
+ * @returns {Null} Nothing.
  */
 function dev() {
     fs.stat('config.json', (error) => {
-        if (!error) {
-            require('./helper/start-server');
+        if (error) {
+            missingConfig();
         } else {
-            require('./helper/missing-config');
+            startServer();
         }
     });
 }

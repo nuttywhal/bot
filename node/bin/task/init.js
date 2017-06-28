@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @module bin/task/init
  */
@@ -14,8 +12,9 @@ const reader = readline.createInterface({
 });
 
 /**
- * Read a value entered by the user from stdin.
- * This function is a promise wrapper for reader.question().
+ * Read a value entered by the user from stdin. This function wraps
+ * reader.question() in a promise.
+ *
  * @param {String} prompt - See documentation for readline.
  * @returns {Promise.<String>} Value entered by the user.
  */
@@ -33,7 +32,9 @@ function question(prompt) {
 
 /**
  * Create a server configuration file by walking the user through a wizard.
- * @returns {Null}
+ * This creates a configuration file called 'config.json'.
+ *
+ * @returns {Null} Nothing.
  */
 async function init() {
     const config = {};

@@ -1,21 +1,24 @@
-'use strict';
-
 /**
  * @module bin/task/start
  */
 
 const fs = require('fs');
+const missingConfig = require('./helper/missing-config');
 const processManager = require('pm2');
 const path = require('path');
+
 
 /**
  * Start the server in production mode as a daemon process using
  * PM2, a production process manager.
- * @returns {Null}
+ *
+ * @returns {Null} Nothing.
  */
 function start() {
     fs.stat('config.json', (error) => {
-        if (!error) {
+        if (error) {
+            missingConfig();
+        } else {
             processManager.connect(() => {
                 processManager.start(
                     {
@@ -28,8 +31,6 @@ function start() {
                     }
                 );
             });
-        } else {
-            require('./helper/missing-config.js');
         }
     });
 }

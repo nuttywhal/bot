@@ -1,5 +1,3 @@
-'use strict';
-
 const verifyToken = require('./handler/verify-token');
 
 module.exports = [
@@ -8,4 +6,4 @@ module.exports = [
         method: 'GET',
         path: '/webhook'
     }
-]
+];

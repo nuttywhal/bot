@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @module bin/task/stop
  */
@@ -8,7 +6,8 @@ const processManager = require('pm2');
 
 /**
  * Stop the server daemon process.
- * @returns {Null}
+ *
+ * @returns {Null} Nothing.
  */
 function stop() {
     processManager.connect(() => {
