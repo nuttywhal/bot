@@ -5,6 +5,7 @@
  */
 
 const Hapi = require('hapi');
+const routes = require('./route');
 const server = new Hapi.Server();
 
 let serverConfigured = false;
@@ -17,6 +18,8 @@ function setup(configuration) {
             host: configuration.server.hostname,
             port: configuration.server.port
         });
+
+        server.route(routes);
     }
 }
 
