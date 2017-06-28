@@ -38,10 +38,16 @@ function question(prompt) {
 async function init() {
     const config = {};
     config.server = {};
+    config.facebook = {};
 
-    console.log(`\n  ${chalk.yellow('Lubbers')} Server Configuration Wizard\n`);
-    config.server.hostname = await question(`${chalk.cyan('  Enter hostname: ')}`);
-    config.server.port = await question(`${chalk.cyan('  Enter port number: ')}`);
+    console.log(`\n${chalk.yellow('Lubbers')} Server Configuration Wizard\n`);
+    config.server.hostname = await question(`${chalk.cyan('Enter hostname: ')}`);
+    config.server.port = await question(`${chalk.cyan('Enter port number: ')}`);
+
+    console.log();
+    config.facebook.appSecret = await question(`${chalk.cyan('Enter app secret: ')}`);
+    config.facebook.verifyToken = await question(`${chalk.cyan('Enter verify token: ')}`);
+    config.facebook.accessToken = await question(`${chalk.cyan('Enter page access token: ')}`);
 
     fs.writeFile('config.json', JSON.stringify(config, null, '\t'), () => {});
     reader.close();
