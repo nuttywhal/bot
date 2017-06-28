@@ -2,7 +2,6 @@
  * @module handler/send-api
  */
 
-const configuration = require('../config.json');
 const request = require('request');
 
 /**
@@ -14,6 +13,9 @@ const request = require('request');
  * @returns {Null} Nothing.
  */
 function callSendAPI(data) {
+    // Load page access token from configuration file.
+    const configuration = require('../config.json');
+
     request(
         {
             json: data,

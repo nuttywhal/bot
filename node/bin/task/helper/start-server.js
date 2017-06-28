@@ -1,5 +1,4 @@
 const lubbers = require('../../../server');
-const configuration = require('../../../config.json');
 
 /**
  * Setup and start the Hapi server using the configuration file generated
@@ -8,6 +7,8 @@ const configuration = require('../../../config.json');
  * @returns {Null} Nothing.
  */
 function startServer() {
+    const configuration = require('../../../config.json');
+
     lubbers.setup(configuration);
     lubbers.server.start(() => {
         console.log(`Server running at: ${lubbers.server.info.uri}`);

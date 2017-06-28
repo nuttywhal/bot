@@ -2,8 +2,6 @@
  * @module handler/verify-token
  */
 
-const configuration = require('../config.json');
-
 /**
  * Complete the challenge-response authentication for a new page subscription
  * when setting up a webhook for a Facebook app.
@@ -13,6 +11,9 @@ const configuration = require('../config.json');
  * @returns {Null} Nothing.
  */
 function verifyToken(request, reply) {
+    // Load webhook verification token from configuration file.
+    const configuration = require('../config.json');
+
     if (request.query['hub.mode'] === 'subscribe' &&
         request.query['hub.verify_token'] === configuration.facebook.verifyToken) {
         console.log('Validating webhook.');

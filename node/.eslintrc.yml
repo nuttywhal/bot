@@ -20,6 +20,8 @@ rules:
   func-style:
     - error
     - declaration
+  global-require:
+    - off
   indent:
     - error
     - 4
