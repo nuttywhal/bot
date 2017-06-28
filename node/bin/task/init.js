@@ -38,6 +38,7 @@ function question(prompt) {
  */
 async function init() {
     const config = {};
+
     config.server = {};
     config.facebook = {};
 

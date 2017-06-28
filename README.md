@@ -1,5 +1,9 @@
 # ![lubbers](https://user-images.githubusercontent.com/26120940/27524607-5dff917e-59eb-11e7-886a-e272d40492cd.png)
 
+[![bitHound Code](https://www.bithound.io/github/nuttywhal/lubbers/badges/code.svg)](https://www.bithound.io/github/nuttywhal/lubbers)
+[![bitHound Dependencies](https://www.bithound.io/github/nuttywhal/lubbers/badges/dependencies.svg)](https://www.bithound.io/github/nuttywhal/lubbers/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/nuttywhal/lubbers/badges/devDependencies.svg)](https://www.bithound.io/github/nuttywhal/lubbers/master/dependencies/npm)
+
 Lubbers (pronounced LOO-bers) is a Facebook [Messenger Platform](https://developers.facebook.com/docs/messenger-platform) chatbot that answers queries about music theory.
 
 ## Features
