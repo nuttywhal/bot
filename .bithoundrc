@@ -1,0 +1,11 @@
+{
+  "ignore": [
+    "**/node_modules/**"
+  ],
+  "critics": {
+    "lint": {
+      "engine": "eslint"
+    }
+  },
+  "packageJsonLocation": "node/package.json"
+}
