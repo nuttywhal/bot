@@ -51,6 +51,7 @@ async function init() {
     config.facebook.verifyToken = await question(`${chalk.cyan('Enter verify token: ')}`);
     config.facebook.accessToken = await question(`${chalk.cyan('Enter page access token: ')}`);
 
+    console.log();
     fs.writeFile('config.json', JSON.stringify(config, null, '\t'), () => {});
     reader.close();
 }

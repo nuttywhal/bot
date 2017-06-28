@@ -39,6 +39,6 @@ if (selectedTask) {
         });
     }
 
-    console.log(cliui.toString());
+    console.log(cliui.toString(), '\n');
     process.exit(0);
 }

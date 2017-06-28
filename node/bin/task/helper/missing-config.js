@@ -18,7 +18,7 @@ function outputError() {
         text: `Run the ${chalk.yellow('lubbers init')} command to create one.`
     });
 
-    console.log(cliui.toString());
+    console.log(cliui.toString(), '\n');
     process.exit(1);
 }
 
