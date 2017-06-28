@@ -8,7 +8,7 @@
     "lubbers": "bin/cli.js"
   },
   "scripts": {
-    "test": "./node_modules/.bin/eslint ."
+    "test": "eslint . && cloc .. --exclude-dir=node_modules --include-lang=JavaScript,Prolog,Python"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "cloc": "^2.2.0",
     "eslint": "^4.1.1"
   }
 }
