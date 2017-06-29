@@ -1,3 +1,7 @@
+/**
+ * @module bin/task/helper/start-server
+ */
+
 const lubbers = require('../../../server');
 
 /**

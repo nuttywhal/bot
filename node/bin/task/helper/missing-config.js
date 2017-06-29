@@ -1,3 +1,7 @@
+/**
+ * @module bin/task/helper/missing-config
+ */
+
 const chalk = require('chalk');
 const cliui = require('cliui')();
 

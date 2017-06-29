@@ -7,7 +7,6 @@ const missingConfig = require('./helper/missing-config');
 const processManager = require('pm2');
 const path = require('path');
 
-
 /**
  * Start the server in production mode as a daemon process using
  * PM2, a production process manager.
@@ -23,7 +22,7 @@ function start() {
                 processManager.start(
                     {
                         name: 'lubbers',
-                        script: path.resolve(__dirname, 'helper', 'start-server.js')
+                        script: path.resolve(__dirname, 'helper', 'start-server-prod.js')
                     },
                     () => {
                         processManager.disconnect();
