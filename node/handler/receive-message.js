@@ -25,7 +25,7 @@ function echoMessage(event) {
     if (event.message.text) {
         const data = {
             message: {text: event.message.text},
-            recipient: {id: event.recipient_id}
+            recipient: {id: event.sender.id}
         };
 
         callSendAPI(data);
@@ -33,15 +33,16 @@ function echoMessage(event) {
 }
 
 /**
- * Complete the challenge-response authentication for a new page subscription
- * when setting up a webhook for a Facebook app.
+ * Receive messages and other events sent by Messenger users. Webhook events
+ * will only be received at this URI after webhook integration has been enabled
+ * by the Facebook app and a Facebook page has been subscribed to the webhook.
  *
  * @param {Request} request - Hapi request.
  * @param {Reply} reply - Hapi reply.
  * @returns {Null} Nothing.
  */
 function receiveMessage(request, reply) {
-    const data = request.body;
+    const data = request.payload;
 
     if (data.object === 'page') {
         data.entry.forEach((entry) => {
