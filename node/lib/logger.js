@@ -28,7 +28,8 @@ module.exports = (callingModule) => {
     return new winston.Logger({
         transports: [
             new (winston.transports.Console)({
-                label: getFilename(callingModule)
+                label: getFilename(callingModule),
+                timestamp: true
             })
         ]
     });

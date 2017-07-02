@@ -2,6 +2,7 @@
  * @module handler/send-api
  */
 
+const logger = require('../lib/logger')(module);
 const request = require('request');
 
 /**
@@ -26,19 +27,19 @@ function callSendAPI(data) {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 if (body.message_id) {
-                    console.log(
+                    logger.info(
                         'Successfully sent message with id %s to recipient %s',
                         body.message_id,
                         body.recipient_id
                     );
                 } else {
-                    console.log(
+                    logger.info(
                         'Successfully called the Send API for recipient %s',
                         body.recipient_id
                     );
                 }
             } else {
-                console.error(
+                logger.error(
                     'Failed calling Send API',
                     response.statusCode,
                     response.statusMessage,

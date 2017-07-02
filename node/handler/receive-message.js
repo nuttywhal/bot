@@ -3,6 +3,7 @@
  */
 
 const callSendAPI = require('./send-api');
+const logger = require('../lib/logger')(module);
 
 /**
  * Echo the received text message event to the console and back to the
@@ -13,14 +14,14 @@ const callSendAPI = require('./send-api');
  * @returns {Null} Nothing.
  */
 function echoMessage(event) {
-    console.log(
+    logger.info(
         'User %d to Page %d at %d with message: ',
         event.sender.id,
         event.recipient.id,
         event.timestamp
     );
 
-    console.log(JSON.stringify(event.message));
+    logger.info(JSON.stringify(event.message));
 
     if (event.message.text) {
         const data = {
@@ -50,7 +51,7 @@ function receiveMessage(request, reply) {
                 if (event.message) {
                     echoMessage(event);
                 } else {
-                    console.log('Webhook received unknown event: ', event);
+                    logger.warn('Webhook received unknown event: ', event);
                 }
             });
         });

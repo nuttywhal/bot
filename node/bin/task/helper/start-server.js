@@ -15,7 +15,7 @@ function startServer() {
 
     lubbers.setup(configuration);
     lubbers.server.start(() => {
-        console.log(`Server running at: ${lubbers.server.info.uri}`);
+        console.log(`The server is running at ${lubbers.server.info.uri}.`);
     });
 }
 
