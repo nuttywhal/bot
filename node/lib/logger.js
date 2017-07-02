@@ -15,7 +15,8 @@ const winston = require('winston');
  */
 function getFilename(callingModule) {
     // Split filepath for both Windows and Unix delimiters.
-    const parts = callingModule.filename.split(/[\/\\]/);
+    const parts = callingModule.filename.split(/[/\\]/);
+
     return `${parts[parts.length - 2]}/${parts.pop()}`;
 }
 
@@ -24,13 +25,12 @@ function getFilename(callingModule) {
 //
 // const logger = require('lib/logger.js')(module);
 
-module.exports = (callingModule) => {
-    return new winston.Logger({
+module.exports = (callingModule) =>
+    new winston.Logger({
         transports: [
-            new (winston.transports.Console)({
+            new winston.transports.Console({
                 label: getFilename(callingModule),
                 timestamp: true
             })
         ]
     });
-};
